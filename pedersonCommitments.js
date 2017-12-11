@@ -18,8 +18,8 @@ let arg3 = process.argv[3]
 let arg4 = process.argv[4]
 
 // These blinding factors (r1,r2) are not how this should work in production!!
-let r1 = new bn(Math.floor(Math.random()*Number.MAX_SAFE_INTEGER).toString(), 10)
-let r2 = new bn(Math.floor(Math.random()*Number.MAX_SAFE_INTEGER).toString(), 10)
+let r1 = ec.genKeyPair().getPrivate()
+let r2 = ec.genKeyPair().getPrivate()
 let r3 = r1.add(r2)
 let i1 = new bn(arg2, 10)
 let i2 = new bn(arg3, 10)
