@@ -4,9 +4,19 @@ let bn = require('bn.js')
 
 var P = ec.genKeyPair();
 
-let i1 = new bn('10', 10)
-let i2 = new bn('12', 10)
-let v = new bn('22', 10)
+if(process.argv.length !== 5){
+  console.log('Please pass in two input values (i1, i2) and one output value (v)')
+  console.log('This program will check that i1 + i2 = v')
+  process.exit(0)
+}
+
+let arg2 = process.argv[2]
+let arg3 = process.argv[3]
+let arg4 = process.argv[4]
+
+let i1 = new bn(arg2, 10)
+let i2 = new bn(arg3, 10)
+let v = new bn(arg4, 10)
 
 let c1 = P.getPublic().mul(i1)
 let c2 = P.getPublic().mul(i2)
