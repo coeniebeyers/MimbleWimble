@@ -13,32 +13,36 @@ if(process.argv.length !== 5){
   process.exit(0)
 }
 
+// Private
 let arg2 = process.argv[2]
 let arg3 = process.argv[3]
 let arg4 = process.argv[4]
 
-// These blinding factors (r1,r2) are not how this should work in production!!
-let r1 = ec.genKeyPair().getPrivate()
-let r2 = ec.genKeyPair().getPrivate()
-let r3 = r1.add(r2)
-let i1 = new bn(arg2, 10)
-let i2 = new bn(arg3, 10)
-let v = new bn(arg4, 10)
+// These blinding factors (b1,b2) are not how this should work in production?!
+let b1 = ec.genKeyPair().getPrivate()
+let b2 = ec.genKeyPair().getPrivate()
+let b3 = b1.add(b2)
+let v1 = new bn(arg2, 10)
+let v2 = new bn(arg3, 10)
+let v3 = new bn(arg4, 10)
 
-let i1P = P.getPublic().mul(i1)
-let i2P = P.getPublic().mul(i2)
-let r1Q = Q.getPublic().mul(r1)
-let r2Q = Q.getPublic().mul(r2)
-let vP = P.getPublic().mul(v)
-let r3Q = Q.getPublic().mul(r3)
+let v1P = P.getPublic().mul(v1)
+let v2P = P.getPublic().mul(v2)
+let v3P = P.getPublic().mul(v3)
 
-let c1 = (i1P).add(r1Q)
-let c2 = (i2P).add(r2Q)
-let c3 = (vP).add(r3Q)
+let b1Q = Q.getPublic().mul(b1)
+let b2Q = Q.getPublic().mul(b2)
+let b3Q = Q.getPublic().mul(b3)
 
+// Public
+let c1 = (v1P).add(b1Q)
+let c2 = (v2P).add(b2Q)
+let c3 = (v3P).add(b3Q)
+
+// Verification using only public information
 let c1c2 = c1.add(c2)
 let equalX = c1c2.getX().cmp(c3.getX())
-let equalY = c1c2.getX().cmp(c3.getX())
+let equalY = c1c2.getY().cmp(c3.getY())
 
 if(equalX === 0 && equalY === 0){
   console.log('c1 + c2 = c3')
