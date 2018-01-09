@@ -26,7 +26,7 @@ let bits = 64;
 let startTime = new Date().getTime();
 
 // This is the value that we want to hide. We need to prove that it is positive.
-let v = -234523456;
+let v = 234523456;
 
 // This is the secret blinding factor used to hide the value that is committed to
 let b = new bn(r.generate(32, 'hex'), 16);
