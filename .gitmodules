@@ -1,0 +1,3 @@
+[submodule "ECCRingSignatures"]
+	path = ECCRingSignatures
+	url = https://github.com/rynobey/ECCRingSignatures.git
