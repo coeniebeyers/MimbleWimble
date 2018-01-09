@@ -12,6 +12,7 @@
     "elliptic": "^6.4.0"
   },
   "dependencies": {
-    "bn": "^1.0.1"
+    "bn": "^1.0.1",
+    "random-int": "^1.0.0"
   }
 }
