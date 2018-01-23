@@ -1,6 +1,6 @@
 pragma solidity ^0.4.19;
 
-contract EcMul{
+contract EcOperations{
  function ecmul(uint256 x, uint256 y, uint256 scalar) public payable returns(uint256[2] p) {
     // With a public key (x, y), this computes p = scalar * (x, y).
     uint256[3] memory input;
