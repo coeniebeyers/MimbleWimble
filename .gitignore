@@ -38,6 +38,15 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+go/pkg/
+go/src/github.com/
+go/src/golang.org/
+
+# Go profiler
+*.prof
+
+# Go binaries
+go/ring
 
 # Typescript v1 declaration files
 typings/
