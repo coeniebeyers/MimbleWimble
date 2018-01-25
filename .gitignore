@@ -47,6 +47,8 @@ go/src/golang.org/
 
 # Go binaries
 go/ring
+go/testSchnorr
+go/positivityproof
 
 # Typescript v1 declaration files
 typings/
