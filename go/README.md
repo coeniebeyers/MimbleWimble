@@ -1,9 +1,9 @@
 To set up and run do the following
 ```
-chmod +x setupRing.sh
+chmod +x setup.sh
 ```
 ```
-./setupRing.sh
+./setup.sh
 ```
 ```
 export GOPATH=`pwd`
@@ -13,4 +13,10 @@ go build ring
 ```
 ```
 ./ring
+```
+```
+go build positivityproof
+```
+```
+./positivityproof
 ```
