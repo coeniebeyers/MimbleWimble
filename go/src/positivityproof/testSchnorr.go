@@ -3,6 +3,7 @@ package main
 import (
   "positivityproof/util"
   "github.com/ethereum/go-ethereum/crypto/bn256"
+  //"golang.org/x/crypto/bn256"
   "math/big"
   "fmt"
   "flag"
@@ -29,8 +30,8 @@ func main() {
   }
 
   m := "veritaserum"
-  sqrtb := new(big.Int).SetInt64(2)
-  sqrtv := new(big.Int).SetInt64(-3)
+  sqrtb := util.CryptoRandBigInt()
+  sqrtv := new(big.Int).SetInt64(10000)
   kb := util.CryptoRandBigInt()
   kv := util.CryptoRandBigInt()
   G := new(bn256.G1).ScalarBaseMult(new(big.Int).SetInt64(1))
