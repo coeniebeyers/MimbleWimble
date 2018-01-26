@@ -12,7 +12,7 @@ Old versions of solidity and ethereumjs-testrpc can cause various errors. To upd
 3. `npm update -g solc`
 4. cd to your truffle install `cd /usr/lib/node_modules/truffle`
 5. `rm -rf node_modules/solc`
-6. `npm install`
+6. `npm install solc@0.4.19`
 
 Note that `truffle version` still reports the incorrect version of solc eventhough it has been updated.
 
