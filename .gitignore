@@ -75,3 +75,7 @@ typings/
 *.swp
 *.swo
 *.swn
+
+# Truffle
+truffle.js
+build/
