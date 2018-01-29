@@ -3,7 +3,8 @@ package main
 import (
   "ring/util"
   //"github.com/ethereum/go-ethereum/crypto/bn256"
-  "golang.org/x/crypto/bn256"
+  //"golang.org/x/crypto/bn256"
+  "github.com/asimshankar/bn256"
   "math/big"
   "fmt"
   "flag"
@@ -41,7 +42,7 @@ func main() {
       pks[i], _ = util.GenRandomKeyPair()
     }
   }
-  for count := 0; count < 48; count++ {
+  for count := 0; count < 10; count++ {
     eArr, sArr := util.SignAOS(pks, sks, idx, m)
     //util.VerifyAOSParr(pks, eArr, sArr, m)
     isValid := util.VerifyAOS(pks, eArr[numPairs-1], sArr, m)
