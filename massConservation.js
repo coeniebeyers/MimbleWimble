@@ -26,7 +26,7 @@ let c1c2 = c1.add(c2)
 let c3 = P.getPublic().mul(v)
 
 let equalX = c1c2.getX().cmp(c3.getX())
-let equalY = c1c2.getX().cmp(c3.getX())
+let equalY = c1c2.getY().cmp(c3.getY())
 
 if(equalX === 0 && equalY === 0){
   console.log('c1 + c2 = c3')
