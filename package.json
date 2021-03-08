@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "elliptic": "^6.4.0"
+    "elliptic": "^6.5.4"
   },
   "dependencies": {
     "bn": "^1.0.1",
